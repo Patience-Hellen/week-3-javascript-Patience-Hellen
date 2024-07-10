@@ -1,21 +1,15 @@
-// Declare variables of different data types
 let myString = "Hello, world!";
-let myNumber = 42;
+let myNumber = 55;
 let myBoolean = true;
 
-// Define and call functions to perform simple operations
-
-// Function to add two numbers
 function add(a, b) {
     return a + b;
 }
 
-// Function to subtract two numbers
 function subtract(a, b) {
     return a - b;
 }
 
-// Function to divide two numbers
 function divide(a, b) {
     if (b !== 0) {
         return a / b;
@@ -25,21 +19,94 @@ function divide(a, b) {
     }
 }
 
-// Function to multiply two numbers
+
 function multiply(a, b) {
     return a * b;
 }
 
-// Call the functions and use console.log() to print the output
-let num1 = 10;
-let num2 = 5;
+// Event listeners for buttons
+document.getElementById("addButton").addEventListener("click", function() {
+    const num1 = parseFloat(document.getElementById("num1").value);
+    const num2 = parseFloat(document.getElementById("num2").value);
+    const result = add(num1, num2);
+    document.getElementById("result").textContent = "Result: " + result;
+});
 
-console.log("Add: " + add(num1, num2));          // Output: Add: 15
-console.log("Subtract: " + subtract(num1, num2)); // Output: Subtract: 5
-console.log("Divide: " + divide(num1, num2));    // Output: Divide: 2
-console.log("Multiply: " + multiply(num1, num2)); // Output: Multiply: 50
+document.getElementById("subtractButton").addEventListener("click", function() {
+    const num1 = parseFloat(document.getElementById("num1").value);
+    const num2 = parseFloat(document.getElementById("num2").value);
+    const result = subtract(num1, num2);
+    document.getElementById("result").textContent = "Result: " + result;
+});
 
-// Print variables to debug code
-console.log("String: " + myString);              // Output: String: Hello, world!
-console.log("Number: " + myNumber);              // Output: Number: 42
-console.log("Boolean: " + myBoolean);            // Output: Boolean: true
+document.getElementById("divideButton").addEventListener("click", function() {
+    const num1 = parseFloat(document.getElementById("num1").value);
+    const num2 = parseFloat(document.getElementById("num2").value);
+    const result = divide(num1, num2);
+    document.getElementById("result").textContent = "Result: " + result;
+});
+
+document.getElementById("multiplyButton").addEventListener("click", function() {
+    const num1 = parseFloat(document.getElementById("num1").value);
+    const num2 = parseFloat(document.getElementById("num2").value);
+    const result = multiply(num1, num2);
+    document.getElementById("result").textContent = "Result: " + result;
+});
+
+// Event listener for toggling text visibility
+document.getElementById("toggleButton").addEventListener("click", function() {
+    const toggleText = document.getElementById("toggleText");
+    if (toggleText.classList.contains("hidden")) {
+        toggleText.classList.remove("hidden");
+    } else {
+        toggleText.classList.add("hidden");
+    }
+});
+
+// Event listener for highlighting text
+document.getElementById("highlightButton").addEventListener("click", function() {
+    const highlightText = document.getElementById("highlightText");
+    highlightText.classList.toggle("highlight");
+});
+
+// Create a chart using Chart.js
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar', // Change this to 'line', 'pie', etc. to try different chart types
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        datasets: [{
+            label: 'Monthly Sales',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+console.log("String: " + myString); 
+console.log("Number: " + myNumber); 
+console.log("Boolean: " + myBoolean); 
