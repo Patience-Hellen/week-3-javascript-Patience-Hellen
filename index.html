@@ -3,10 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Basics</title>
+    <title>JavaScript DOM Manipulation and Chart.js</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+        canvas {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+    </style>
 </head>
 <body>
-    <h1>JavaScript Basics</h1>
+    <h1>JavaScript DOM Manipulation and Chart.js</h1>
+
+    <!-- Input fields and buttons for arithmetic operations -->
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button id="addButton">Add</button>
+    <button id="subtractButton">Subtract</button>
+    <button id="divideButton">Divide</button>
+    <button id="multiplyButton">Multiply</button>
+    
+
+    <p id="result">Result will be displayed here.</p>
+
+    
+    <p id="toggleText" class="hidden">This text can be toggled.</p>
+    <button id="toggleButton">Show/Hide Text</button>
+
+  
+    <p id="highlightText">This text can be highlighted.</p>
+    <button id="highlightButton">Highlight Text</button>
+
+   
+    <canvas id="myChart"></canvas>
+
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
